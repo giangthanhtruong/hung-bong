@@ -1,7 +1,7 @@
-//Các biến Const
-const cvs = document.getElementById('game');
-const ctx = cvs.getContext('2d');
-const basImg = new Image();
+//Các biến
+let cvs = document.getElementById('game');
+let ctx = cvs.getContext('2d');
+let basImg = new Image();
 basImg.src = 'basket.png';
 let leftArrow = false;
 let rightArrow = false;
@@ -29,7 +29,7 @@ function drawBasket() {
 }
 
 
-//Control Car
+//Control
 document.addEventListener('keydown', function (event) {
     if (event.keyCode === 37) {
         leftArrow = true;
