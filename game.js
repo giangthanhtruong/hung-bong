@@ -1,4 +1,4 @@
-//Các biến
+
 let cvs = document.getElementById('game');
 let ctx = cvs.getContext('2d');
 let basImg = new Image();
@@ -17,19 +17,19 @@ function drawBG() {
 }
 
 
-//Creat basket
+
 let basket = {
     x: 100,
     y: 450
 };
 
-//Draw Basket
+
 function drawBasket() {
     ctx.drawImage(basImg, basket.x, basket.y, 150, 150);
 }
 
 
-//Control
+
 document.addEventListener('keydown', function (event) {
     if (event.keyCode === 37) {
         leftArrow = true;
@@ -46,7 +46,7 @@ document.addEventListener('keyup', function (event) {
 });
 
 
-//Move Basket
+
 window.addEventListener('mousemove', function (event) {
     let key = document.getElementById('game').getBoundingClientRect()
     basket.x = event.clientX - key.left - 50 / 2;
@@ -55,7 +55,7 @@ window.addEventListener('mousemove', function (event) {
     }
 })
 
-//tạo ball
+
 let myBall = [];
 myBall[0] = Math.floor(Math.random() * 1150);
 myBall[1] = 0
@@ -116,7 +116,7 @@ function Point(point) {
 
 
 // function winner() {
-//     if (speed === 0 && point < 50) {
+//     if (speed > 0 && point < 50) {
 //         ctx.font = '50px Arial';
 //         ctx.fillText('Your Score is : '+ point, cvs.width/4, cvs.height/2)
 //     }
@@ -133,7 +133,6 @@ function loop() {
         ctx.clearRect(0, 0, cvs.width, cvs.height);
         drawBG();
         drawBasket()
-        // update();
         drawEnemy()
         // winner();
         check();
